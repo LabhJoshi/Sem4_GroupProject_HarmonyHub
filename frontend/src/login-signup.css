@@ -1,0 +1,218 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7; /* Deep navy background */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(48, 47, 47); /* Dark purple and deep navy gradient background */
+}
+
+/* Container */
+.container_singin, .container_signin {
+    background-color: #101010; /* Very dark blue background */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    transition: transform 0.6s ease, background-color 0.6s ease;
+    transform: scale(1);
+}
+
+/* Side Panels */
+.left-side, .right-side {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.6s ease;
+}
+/* 
+.left-side:hover, .right-side:hover {
+    background-color: #34348b; Brighter purple when hovered
+} */
+
+/* Carousel */
+.carousel {
+    width: 93%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-inner img {
+    padding-bottom: 9px;
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures the image fits within the div while maintaining aspect ratio */
+    border-radius: 6px;
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-inner img:hover {
+    transform: scale(1.1); /* More noticeable image zoom on hover */
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #7676b3;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background-color: #ffffff;
+    transform: scale(1.3); /* Larger active dot */
+}
+
+.dot:hover {
+    background-color: #b0b0ff; /* Brighter when hovered */
+}
+
+/* Form Container */
+.login-form-container {
+    width: 80%;
+    max-width: 400px;
+    text-align: left;
+}
+
+.logo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 75px;
+    color: #8c8cff; /* Light gray logo */
+    /* text-shadow: 3px 3px 10px #f6efef; More intense logo shadow */
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+    /* animation: pulse 1.5s infinite alternate; Logo pulse animation */
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        text-shadow: 3px 3px 10px #4f4fdb;
+    }
+    to {
+        transform: scale(1.1);
+        text-shadow: 3px 3px 13px #8c8cff;
+    }
+}
+
+.loginform {
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.8s ease; /* Smooth slide-in animation */
+}
+
+label {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #8c8cff; /* Brighter purple labels */
+}
+
+#username, input[type="password"] ,input[type="email"]  {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #666;
+    border-radius: 8px;
+    background-color: #f3f3f6; /* Darker purple background */
+    color: #000; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#username:focus, input[type="password"]:focus , input[type="email"]:focus{
+    border-color: #8c8cff; /* Bright purple border on focus */
+    box-shadow: 0 0 10px rgba(140, 140, 255, 0.7); /* Glowing effect on focus */
+}
+
+/* Buttons */
+.loginform button[type="submit"], .google-signin button {
+    width: 100%;
+    padding: 12px 20px; /* Adjusted padding for better shape */
+    border: none;
+    border-radius: 30px; /* Rounded button shape */
+    background-color: #5e45b1;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.loginform button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: all 0.75s ease;
+}
+
+.loginform button[type="submit"]:hover::before {
+    width: 0;
+    height: 0;
+}
+
+.loginform button[type="submit"]:hover {
+    background-color: #5e45b1; /* Lighter pink on hover */
+    transform: scale(1.08); /* More pronounced scaling on hover */
+    box-shadow: 0 10px 20px #5e45b1; /* Enhanced shadow effect */
+}
+
+.loginform button[type="submit"]:active {
+    transform: scale(0.95); /* Slightly smaller on click */
+    box-shadow: 0 5px 10px #5e45b1; /* Softer shadow on click */
+}
+
+.google-signin {
+    margin-top: 20px;
+}
+
+.google-signin button {
+    background-color: #db4437; /* Google red */
+}
+
+/* Links */
+.links {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.links a {
+    color: #8c8cff; /* Brighter purple links */
+    font-size: 1
+}
+
+.links a:hover {
+    color: #b0b0ff; /* Brighter purple links on hover */
+    cursor: pointer;
+}

@@ -1,0 +1,164 @@
+.songs-container {
+    background-color: #222; /* Match the music player background */
+    color: #fff; /* Text color */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1400px;
+    width: 1000px; /* Fixed width */
+    height: 600px; /* Fixed height */
+    position: absolute; /* Use absolute positioning to place it correctly */
+    left: 56%; /* Center horizontally */
+    top: 10%;
+    transform: translateX(-50%); /* Adjust for width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto; /* Allow vertical scrolling */
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+}
+
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo-music {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #EAD1DC;
+}
+
+.nav-link {
+    color: #b3b3b3;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    color: #EAD1DC; /* Hover effect */
+}
+
+.song-search-form {
+    margin-top: 20px; /* Space from the songs list */
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+}
+
+.mood-prompt-label {
+    margin-bottom: 10px;
+    color: #b3b3b3;
+}
+
+.mood-prompt-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #333;
+    color: #fff;
+    width: 98%;
+}
+
+.submit-button {
+    background-color: #6A0DAD;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #EAD1DC; /* Change to a lighter color on hover */
+}
+
+.error-message {
+    color: #ff4d4d; /* Error message color */
+}
+
+.songs-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    flex: 0 0 auto; /* Prevent the title from growing */
+}
+
+.songs-list {
+    list-style: none;
+    padding: 0;
+    flex: 1; /* Allow the song list to take up available space */
+    overflow-y: auto; /* Allow scrolling if too many songs */
+}
+
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.pl {
+    background: none;
+    color: #ffffff;
+    font-size: 1em;
+     cursor: pointer;
+    transition: color 0.3s ease; 
+    border-radius: 50%; 
+    border: none;
+    /* padding: 8px; */ 
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-box {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    color: #fff;
+  }
+  
+  .emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  
+  .emoji {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .emoji:hover {
+    transform: scale(1.2);
+  }
+  
+  .open-modal-button {
+    background-color: #6A0DAD;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .open-modal-button:hover {
+    background-color: #EAD1DC;
+  }
+  

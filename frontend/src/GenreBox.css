@@ -1,0 +1,61 @@
+.genre-container {
+  display: grid;
+  grid-template-columns: repeat(2, 0.1fr); 
+  gap: 22px; 
+  margin-top: -5.3%;
+  margin-left: -34.6%;
+  background-color: #1A1A1A;
+  width: 30%;
+  height: 52%;
+  padding-bottom: 52px;
+  border-radius: 5px;
+  position: fixed;
+  padding-top: 41px;
+}
+
+.genre-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  width: 170px;
+  height: 73.5px;
+  margin-left: 27%;
+  margin-top: 12%;
+
+}
+
+.genre-box:hover {
+  transform: scale(1.05);
+}
+
+.GenreName {
+  color: aliceblue;
+  font-size: 40px;
+  position: absolute;
+  top: 336px; /* Adjust this value to move the title above the genre boxes */
+  left: -640px;
+  right: 0;
+  text-align: center; /* Centering the title above the boxes */
+  transform: rotate(1deg);
+  z-index: 1000;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.seeAll {
+  color: white;
+  position: relative;
+  z-index: 1;
+  left: 5%;
+  top: 2%;
+  font-size: 13px;
+  text-decoration: underline;
+}

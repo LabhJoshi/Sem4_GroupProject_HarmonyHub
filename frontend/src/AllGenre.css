@@ -1,0 +1,59 @@
+/* Style for the entire genre section */
+.all-genre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  position: relative;
+  top: 39%;
+  left: 5%;
+}
+
+
+/* Title of the genre section */
+.AllGenreName {
+  color: rgb(255, 255, 255);
+  font-size: 60px;
+  position: absolute;
+  top: -3%; /* Adjust this value to move the title above the genre boxes */
+  left: -10px;
+  right: 0;
+  text-align: center; /* Centering the title above the boxes */
+  transform: rotate(1deg);
+  z-index: 1;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* Container for genre boxes */
+.all-genre-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  
+}
+
+/* Individual genre box */
+.all-genre-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect on genre boxes */
+.all-genre-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,386 @@
+/* Layout for entire page */
+.playlist-page {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  /* background-color: #121212; */
+  color: white;
+ 
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+
+.playlist-content {
+  position: relative;
+  align-items: center;
+  margin-left: 200px;
+  margin-top: 60px;
+  width: calc(100% - 200px);
+  scrollbar-width: none;
+  overflow-y: auto;
+}
+
+.playlist-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  
+}
+
+.playlist-cover {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+  margin-right: 350px;
+}
+
+.playlist-title {
+  font-size: 2rem;
+  margin-top: 10px;
+  margin-right: 350px;
+
+}
+
+/* Styling for tracks list */
+.tracks-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 930px;
+}
+
+.track-item:hover {
+  background-color: #333;
+}
+
+.album-art {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+.song-track-info {
+  flex-grow: 1;
+  height: 80px;
+}
+
+.track-name {
+  font-weight: bold;
+  font-size: 1rem;
+  padding-top: 15px;
+}
+
+.track-artist {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+.track-duration {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  margin-right: 10px;
+}
+
+/* Audio Player styling */
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 200px);
+  left: 200px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  border-top: 1px solid #333;
+}
+
+audio {
+  width: 100%;
+}
+
+
+
+.now-playing-box {
+  position: fixed;
+  right: 20px; /* Adds space between the box and the right edge of the screen */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #1A1A1A;
+  padding: 0px;
+  border-radius: 10px 10px 10px 10px;
+  width: 350px;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  margin-top: 2%;
+}
+
+
+.album-cover {
+  width: 210px;
+  height: 190px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
+  margin-left: -11px;
+  margin-top: 15px;
+  object-fit: cover;
+  position: relative;
+  top: 2vh;
+  left: 5.4vw;
+flex-shrink: 0;
+position: fixed;
+
+}
+
+.track-info {
+  text-align: center;
+  margin-bottom: 220px;
+}
+
+.songname {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+  color: #EAD1DC; 
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  margin-top: 40px; /* Space between album cover and song name */
+  position: relative;
+  top: 27vh;
+  
+}
+
+.artistname {
+font-size: 1em;
+  color: #b3b3b3;
+  margin-top: 5px; /* Space between song name and artist name */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: 27vh;
+
+
+}
+
+.controls {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: auto; /* Ensure it sticks to the bottom */
+background-color: #6A0DAD; 
+width: 47.7vh;
+border-radius: 0 0 10px 10px; /* Match border-radius to the bottom of the now-playing-box */
+height: 27vh; /* Allow natural height */
+padding: 10px 0; /* Optional: add padding for controls */
+box-sizing: border-box; /* Include padding in height calculation */
+
+}
+
+
+.playback-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.9em;
+  padding: 16px;
+  transition: color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.playback-button:hover {
+  transform: scale(1.2);
+  color: #ffffff;
+}
+
+
+
+
+.music-player .playback-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-player .icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.music-player .playback-button:hover .icon {
+  transform: scale(1.2);
+   color: #ffffff; /*Customize hover color */
+}
+
+
+.simple-line-icons--control-end {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23000' d='M943.936 0c-17.664 0-31.998 14.338-31.998 32.002v470c-2.88-18.192-13.44-34.465-29.375-44.37L146.851 11.026a64.15 64.15 0 0 0-33.776-9.649A63.8 63.8 0 0 0 81.987 9.44c-20.32 11.28-32.912 32.704-32.912 55.936l-1.008 893.232a63.96 63.96 0 0 0 32.912 55.937a63.9 63.9 0 0 0 31.087 8.064c11.712 0 23.471-3.215 33.775-9.664l736.72-446.608c15.936-9.872 26.495-26.16 29.375-44.352V992c0 17.664 14.336 32 32 32s32-14.336 32-32V32c0-17.664-14.32-32-32-32.001zM112.065 958.61l.992-893.216l735.744 446.592z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.simple-line-icons--control-start {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23000' d='M974.944 65.392c0-23.232-12.592-44.654-32.912-55.935a63.8 63.8 0 0 0-31.088-8.063a63.96 63.96 0 0 0-33.775 9.648L141.44 457.634c-15.952 9.905-26.512 26.208-29.376 44.4V32.004c0-17.664-14.336-32-32-32s-32 14.336-32 32v960c0 17.664 14.336 32 32 32s32-14.336 32-32V521.939c2.88 18.208 13.44 34.511 29.375 44.384l736.72 446.64a63.9 63.9 0 0 0 33.776 9.664a63.94 63.94 0 0 0 31.088-8.065a63.96 63.96 0 0 0 32.912-55.936zM175.2 511.985L910.944 65.393l1.008 893.216z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.simple-line-icons--control-play {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23000' d='m144.624 65.392l735.744 446.592l-736.736 446.624zm0-64a63.8 63.8 0 0 0-31.088 8.063c-20.32 11.28-32.912 32.705-32.912 55.937l-.992 893.216a63.96 63.96 0 0 0 32.912 55.936a63.94 63.94 0 0 0 31.088 8.065c11.712 0 23.472-3.216 33.775-9.664l736.72-446.624a63.94 63.94 0 0 0 30.257-54.336c0-22.112-11.44-42.672-30.257-54.352L178.4 11.025a64.1 64.1 0 0 0-33.775-9.632z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.simple-line-icons--control-pause {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23000' d='M416.272 0H192.064c-17.664 0-32 14.32-32 32v960c0 17.664 14.336 32 32 32h224.208c17.68 0 32-14.336 32-32V32c0-17.68-14.32-32-32-32m-32 960H224.064V64h160.208zM831.937 0H608.881c-17.68 0-32 14.32-32 32v960c0 17.664 14.32 32 32 32h223.056c17.68 0 32-14.336 32-32V32c0-17.68-14.304-32-32-32m-32 960H640.881V64h159.056z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.playback-button:hover .simple-line-icons--control-start,
+.playback-button:hover .simple-line-icons--control-end,
+.playback-button:hover .simple-line-icons--control-play,
+.playback-button:hover .simple-line-icons--control-pause {
+  background-color: rgb(255, 255, 255); /* Change this to your desired color */
+}
+
+
+.playback-button {
+  /* Other styles for your playback button */
+  cursor: pointer; /* Adding a pointer cursor to indicate interactivity */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for scale and shadow */
+}
+
+.playback-button:hover {
+  transform: scale(1.2); /* Increase the size slightly on hover */
+   /* Purple glow effect */
+}
+
+
+
+
+.seek-bar {
+  width: 90%; 
+  display: flex;
+  align-items: center; 
+  margin-top: 100%;  
+
+  position: fixed; /* To position the thumb above the seek bar */
+}
+
+.seek-bar input[type="range"] {
+  /* -webkit-appearance: none; */
+  width: 100%;
+  height: 4px; /* Thin seek bar */
+  background: #ddd;
+  border-radius: 2px;
+  outline: none;
+  position: relative; /* Allow thumb to overlap */
+  z-index: 1; /* Keep it behind the thumb */
+}
+
+.seek-bar input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 0px; /* Position it above the seek bar */
+}
+
+.seek-bar input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  z-index: 2;
+}
+
+.seek-bar input[type="range"]::-ms-thumb {
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  z-index: 2;
+}
+
+.minutes{
+color: white;
+}
